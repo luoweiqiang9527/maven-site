@@ -117,7 +117,7 @@
             </execution>
           </executions>
         </plugin>
-        <!-- publish mono-module site with "mvn site-deploy" -->
+        <!-- 使用“mvn site-deploy”发布单模块站点 -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
