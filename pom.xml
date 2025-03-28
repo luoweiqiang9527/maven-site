@@ -345,6 +345,7 @@
   </reporting>
 
   <profiles>
+    <!--生成项目文档中链接的有效性检查报告，通常在 site 生命周期中运行-->
     <profile>
       <id>linkcheck</id>
       <activation>
@@ -360,6 +361,7 @@
             <artifactId>maven-linkcheck-plugin</artifactId>
             <version>1.2</version>
             <configuration>
+              <!--配置排除规则以优化性能-->
               <excludedLinks>
                 <excludedLink>**/archetype/*</excludedLink>
                 <excludedLink>**/ant-tasks/*</excludedLink>
