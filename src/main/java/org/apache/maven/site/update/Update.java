@@ -32,11 +32,14 @@ import org.jsoup.nodes.Element;
 /**
  * Updater for /plugins/index.apt and /shared/index.apt release numbers against
  * effective site content.
+ * <p>
+ * 更新 /plugins/index.apt 和 /shared/index.apt 文件中的发布版本号，以实际站点内容进行更新。
  */
 public class Update {
     public static void main(String[] args) throws IOException {
         for (String dir : args) {
             new Update().doUpdate(Paths.get("content/apt/" + dir + "/index.apt"));
+            // 该行代码作用是清理当前行的所有内容，并将光标移到行首。动态展示正在更新的 进度条
             System.out.println("\r\33[2K");
         }
     }
@@ -129,6 +132,6 @@ public class Update {
             return null;
         }
 
-        return new String[] {version, date};
+        return new String[]{version, date};
     }
 }

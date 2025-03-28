@@ -383,6 +383,7 @@
         </plugins>
       </reporting>
     </profile>
+    <!--mvn test -Dupdate-->
     <profile>
       <id>update</id>
       <activation>
@@ -397,6 +398,7 @@
             <artifactId>exec-maven-plugin</artifactId>
             <version>3.5.0</version>
             <configuration>
+              <!--运行指定的主类，并传递参数plugins和shared-->
               <mainClass>org.apache.maven.site.update.Update</mainClass>
               <arguments>
                 <argument>plugins</argument>
@@ -409,6 +411,7 @@
                 <goals>
                   <goal>java</goal>
                 </goals>
+                <!--绑定到test阶段执行-->
                 <phase>test</phase>
               </execution>
             </executions>
